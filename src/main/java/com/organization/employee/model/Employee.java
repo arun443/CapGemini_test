@@ -1,18 +1,16 @@
 package com.organization.employee.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
-@ToString
-public class Employee  {
 
-	
-	private String empId;
-	private String empFirstName;
-	private String empLastName;
-	private String clientId;
+@Getter @Setter @ToString
+public class Employee extends RepresentationModel<Employee> {
 
-	private String oranizationID;	
-	private String location;
+
 
 	public String getEmpId() {
 		return empId;
@@ -53,7 +51,14 @@ public class Employee  {
 		this.oranizationID = oranizationID;
 	}
 	
+	
+	private String empId;
+	private String empFirstName;
+	private String empLastName;
+	private String clientId;
 
+	private String oranizationID;	
+	private String location;
 	
 
 }
